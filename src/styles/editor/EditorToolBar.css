@@ -1,0 +1,57 @@
+.editorToolBar {
+    list-style: none;
+    z-index: 99;
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 8px 15px;
+    margin: 0;
+    box-sizing: border-box;
+}
+.editorToolBar > li {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    padding: 8px;
+    margin: 0 6px;
+    border: 1px solid transparent;
+    color: #9a5c00;
+    cursor: pointer;
+    border-radius: 3px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    position: relative;
+}
+.editorToolBar > li:hover {
+    color: #ff9800;
+    border: 1px solid #999;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.editorToolBar li svg {
+    width: 100%;
+    height: 100%;
+}
+
+
+.themeList {
+    list-style: none;
+    position: absolute;
+    top: 36px;
+    right: -5px;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background: #222;
+    border-radius: 3px;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6)
+}
+.themeList li {
+    padding: 5px;
+    border-top: 1px solid #444;
+}
+.themeList li:hover {
+    background: #444;
+}

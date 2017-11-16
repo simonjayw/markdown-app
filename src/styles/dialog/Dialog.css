@@ -1,0 +1,66 @@
+.dialog {
+    z-index: 199;
+
+}
+.dialog-tip {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    width: 120px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    background: #ffc107;
+    border-radius: 5px;
+    box-shadow: 2px 2px 6px 3px rgba(0, 0, 0, 0.3);
+    animation: tipDown 0.5s;
+    -webkit-animation: tipDown 0.5s;
+}
+.dialog-tip:after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    background: #fff;
+    height: 3px;
+    left: 0;
+    right: 0;
+    animation: loadBar 1s;
+    -webkit-animation: loadBar 1s;
+}
+
+@-webkit-keyframes tipDown {
+    from {
+        top: -80px;
+    }
+    to {
+        top: 20px;
+    }
+}
+@keyframes tipDown {
+    from {
+        top: -80px;
+    }
+    to {
+        top: 20px;
+    }
+}
+
+@-webkit-keyframes loadBar {
+    from {
+        right: 120px;
+    }
+    to {
+        right: 0;
+    }
+}
+@keyframes loadBar {
+    from {
+        right: 120px;
+    }
+    to {
+        right: 0;
+    }
+}

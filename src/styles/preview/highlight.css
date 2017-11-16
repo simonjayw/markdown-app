@@ -1,0 +1,96 @@
+.color---test {
+  /* 绿 */
+  color: #e9fdac;
+  /* 蓝 */
+  color: #8cdaff;
+  /* 红 */
+  color: #ff5e5e;
+  /* 橙 */
+  color: #ff8942;
+  /* 淡。。 */
+  color: #fbdfb5;
+  /* 白 */
+  color: #f8f8f2;
+  /* 淡。。 */
+  color: #fbe3bf;
+}
+
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #272822;
+  color: #f8f8f2;
+}
+
+.hljs-tag,
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-strong,
+.hljs-name {
+  color: #ff5e5e;
+}
+
+.hljs-code {
+  color: #66d9ef;
+}
+
+.hljs-class .hljs-title {
+  color: white;
+}
+
+.hljs-attribute,
+.hljs-symbol,
+.hljs-regexp,
+.hljs-link {
+  color: #e9fdac;
+}
+
+.hljs-string,
+.hljs-bullet,
+.hljs-subst,
+.hljs-title,
+.hljs-section,
+.hljs-emphasis,
+.hljs-type,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-addition,
+.hljs-variable,
+.hljs-template-tag,
+.hljs-template-variable {
+  color: #8cdaff;
+}
+
+.hljs-comment,
+.hljs-quote,
+.hljs-deletion,
+.hljs-meta {
+  color: #75715e;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-doctag,
+.hljs-title,
+.hljs-section,
+.hljs-type,
+.hljs-selector-id {
+  font-weight: bold;
+}
+
+/* html */
+.lang-html .hljs-tag {
+  color: #fbe3bf;
+}
+.lang-html .hljs-tag .hljs-attr {
+  color: #8cdaff;
+}
+.lang-html .hljs-tag .hljs-string {
+  color: #fbe3bf;
+}
