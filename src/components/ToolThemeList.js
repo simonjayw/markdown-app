@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-class ThemeList extends React.Component {
+class ToolThemeList extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -38,8 +38,8 @@ class ThemeList extends React.Component {
     }
 }
 
-ThemeList.propTypes = {
+ToolThemeList.propTypes = {
     selectThemes: PropTypes.func.isRequired
 };
 
-export default ThemeList;
+export default ToolThemeList;

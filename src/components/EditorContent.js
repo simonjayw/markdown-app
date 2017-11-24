@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CodeMirror from '../../node_modules/_codemirror@5.31.0@codemirror/lib/codemirror';
 import './EditorContentImport';
 import '../styles/editor/EditorContent.css';
+
+const CodeMirror = require('codemirror/lib/codemirror');
 
 let timmer = null;
 const timeout = function (callback, time) {

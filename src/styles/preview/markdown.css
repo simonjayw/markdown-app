@@ -1024,12 +1024,14 @@
     border-left: 4px solid #42b983;
 }
 .markdown-body code {
-    color: #ff8942;
+    color: #e96900;
 }
 .markdown-body pre code {
-    color: #f8f8f2;
+    /* color: #f8f8f2; */
+    color: #333;
 }
 .markdown-body pre,
 .markdown-body code {
-    background: #222;
+    background: #f8f8f8;
+    /* background: #222; */
 }

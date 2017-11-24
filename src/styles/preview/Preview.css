@@ -6,4 +6,8 @@
     width: 50%;
     box-sizing: border-box;
     overflow: auto;
+    background: #fff;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    transition: all 0.2s;
 }

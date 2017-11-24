@@ -1,13 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import EditorToolBar from '../components/EditorToolBar';
 import EditorContent from '../components/EditorContent';
 import '../styles/editor/Editor.css';
 
 class Editor extends React.Component {
-    handleFullScreen() {
-        this.props.changeFullscreen();
+    handleEditorFullScreen() {
+        this.props.handleEditorFullScreen();
+    }
+
+    handlePreviewFullScreen() {
+        this.props.handlePreviewFullScreen();
     }
 
     selectThemes(theme) {
@@ -28,11 +31,6 @@ class Editor extends React.Component {
                     zIndex: isFullScreen ? 99 : 1,
                 }}
             >
-                <EditorToolBar
-                    isFullScreen={isFullScreen}
-                    handleFullScreen={this.handleFullScreen.bind(this)}
-                    selectThemes={this.selectThemes.bind(this)}
-                />
                 <EditorContent
                     theme={theme}
                     isFullScreen={isFullScreen}
@@ -47,7 +45,8 @@ class Editor extends React.Component {
 Editor.propTypes = {
     isFullScreen: PropTypes.bool.isRequired,
     theme: PropTypes.string.isRequired,
-    editorValue: PropTypes.string.isRequired
+    editorValue: PropTypes.string.isRequired,
+    getEditorValue: PropTypes.func.isRequired
 }
 
 export default Editor;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import marked from 'marked';
 import hljs from 'highlight.js';
 
@@ -21,13 +22,24 @@ class Preview extends React.Component {
             //     return content;
             // }
         );
-        function createMarkup() {
-            return { __html: previewHtml };
-        }
+        const createMarkup = () => ({ __html: previewHtml });
+        const { isFullScreen } = this.props;
         return (
-            <div className='preview markdown-body' dangerouslySetInnerHTML={createMarkup()} />
+            <div
+                className='preview markdown-body'
+                style={{
+                    width: isFullScreen ? '100%' : '50%',
+                    zIndex: isFullScreen ? 99 : 1,
+                }}
+                dangerouslySetInnerHTML={createMarkup()}
+            />
         );
     }
+}
+
+Preview.propTypes = {
+    isFullScreen: PropTypes.bool.isRequired,
+    editorValue: PropTypes.string.isRequired
 }
 
 export default Preview;

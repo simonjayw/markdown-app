@@ -1,18 +1,12 @@
 .color---test {
   /* 绿 */
-  color: #e9fdac;
+  color: #42b983;
   /* 蓝 */
-  color: #8cdaff;
-  /* 红 */
-  color: #ff5e5e;
+  color: #0092db;
   /* 橙 */
-  color: #ff8942;
-  /* 淡。。 */
-  color: #fbdfb5;
-  /* 白 */
-  color: #f8f8f2;
-  /* 淡。。 */
-  color: #fbe3bf;
+  color: #e96900;
+  /* 黑 */
+  color: #444;
 }
 
 
@@ -20,8 +14,8 @@
   display: block;
   overflow-x: auto;
   padding: 0.5em;
-  background: #272822;
-  color: #f8f8f2;
+  /* background: #272822;
+  color: #f8f8f2; */
 }
 
 .hljs-tag,
@@ -30,7 +24,7 @@
 .hljs-literal,
 .hljs-strong,
 .hljs-name {
-  color: #ff5e5e;
+  color: #e96900;
 }
 
 .hljs-code {
@@ -45,7 +39,7 @@
 .hljs-symbol,
 .hljs-regexp,
 .hljs-link {
-  color: #e9fdac;
+  color: #42b983;
 }
 
 .hljs-string,
@@ -63,14 +57,14 @@
 .hljs-variable,
 .hljs-template-tag,
 .hljs-template-variable {
-  color: #8cdaff;
+  color: #0092db;
 }
 
 .hljs-comment,
 .hljs-quote,
 .hljs-deletion,
 .hljs-meta {
-  color: #75715e;
+  color: #444;
 }
 
 .hljs-keyword,
@@ -86,11 +80,11 @@
 
 /* html */
 .lang-html .hljs-tag {
-  color: #fbe3bf;
+  color: #e96900;
 }
 .lang-html .hljs-tag .hljs-attr {
-  color: #8cdaff;
+  color: #0092db;
 }
 .lang-html .hljs-tag .hljs-string {
-  color: #fbe3bf;
+  color: #42b983;
 }

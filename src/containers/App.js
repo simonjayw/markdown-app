@@ -1,11 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import * as dialog from '../redux/actions/dialog';
-import * as editor from '../redux/actions/editor';
+import * as dialogActions from '../redux/actions/dialog';
+import * as editorActions from '../redux/actions/editor';
+import * as previewActions from '../redux/actions/preview';
+import * as toolbarActions from '../redux/actions/toolbar';
 
 import Editor from './Editor';
 import Preview from './Preview';
 import Dialog from './Dialog';
+import ToolBar from './ToolBar';
 import '../styles/App.css';
 
 class App extends React.Component {
@@ -19,25 +22,41 @@ class App extends React.Component {
     }
 
     saveEditor() {
-        const { showDialogTip, editor } = this.props;
+        const { editor, showDialogTip } = this.props;
         localStorage.setItem('markdown_editor_value', editor.editorValue);
         showDialogTip(true, '保存成功');
     }
 
     render() {
-        const { dialog, editor } = this.props;
+        const {
+            dialog,
+            editor,
+            preview,
+            toolbar,
+            changeEditorFullscreen,
+            changePreviewFullscreen,
+            changeTheme,
+            getEditorValue
+        } = this.props;
+
         return (
             <div className='app'>
                 <Editor
-                    isFullScreen={editor.isFullScreen}
-                    theme={editor.theme}
+                    isFullScreen={toolbar.isEditorFullScreen}
+                    theme={toolbar.theme}
                     editorValue={editor.editorValue}
-                    changeFullscreen={() => { this.props.changeFullscreen() }}
-                    changeTheme={(theme) => { this.props.changeTheme(theme) }}
-                    getEditorValue={(editorValue) => { this.props.getEditorValue(editorValue) }}
+                    getEditorValue={(editorValue) => { getEditorValue(editorValue) }}
                 />
                 <Preview
                     editorValue={editor.editorValue}
+                    isFullScreen={toolbar.isPreviewFullScreen}
+                />
+                <ToolBar
+                    selectThemes={(theme) => { changeTheme(theme) }}
+                    isPreviewFullScreen={toolbar.isPreviewFullScreen}
+                    handlePreviewFullScreen={() => { changePreviewFullscreen() }}
+                    isEditorFullScreen={toolbar.isEditorFullScreen}
+                    handleEditorFullScreen={() => { changeEditorFullscreen() }}
                 />
                 <Dialog
                     type={dialog.type}
@@ -48,9 +67,16 @@ class App extends React.Component {
         );
     }
 }
-
 const mapStateToProps = (state) => {
     return state;
-};
+}
 
-export default connect(mapStateToProps, { ...dialog, ...editor })(App);
+export default connect(
+    mapStateToProps,
+    {
+        ...dialogActions,
+        ...editorActions,
+        ...previewActions,
+        ...toolbarActions
+    }
+)(App);
