@@ -32,7 +32,7 @@ class ToolBar extends React.Component {
                         /> : ''
                     }
                 </li>
-                <li>
+                <li onClick={this.props.handleExport}>
                     {toolIcons.exportHtml}
                 </li>
                 <li onClick={this.props.handlePreviewFullScreen}>
@@ -48,10 +48,11 @@ class ToolBar extends React.Component {
 
 ToolBar.propTypes = {
     selectThemes: PropTypes.func.isRequired,
+    handleExport: PropTypes.func.isRequired,
     isPreviewFullScreen: PropTypes.bool.isRequired,
     handlePreviewFullScreen: PropTypes.func.isRequired,
     isEditorFullScreen: PropTypes.bool.isRequired,
-    handleEditorFullScreen: PropTypes.func.isRequired
+    handleEditorFullScreen: PropTypes.func.isRequired,
 };
 
 export default ToolBar;

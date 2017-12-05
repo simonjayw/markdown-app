@@ -1,5 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import marked from 'marked';
+import hljs from 'highlight.js';
+
 import * as dialogActions from '../redux/actions/dialog';
 import * as editorActions from '../redux/actions/editor';
 import * as previewActions from '../redux/actions/preview';
@@ -10,6 +13,9 @@ import Preview from './Preview';
 import Dialog from './Dialog';
 import ToolBar from './ToolBar';
 import '../styles/App.css';
+
+
+let previewHtml = '';
 
 class App extends React.Component {
     componentDidMount() {
@@ -27,16 +33,40 @@ class App extends React.Component {
         showDialogTip(true, '保存成功');
     }
 
+    exportHtml() {
+        // const { editor } = this.props;
+        // fetch('//127.0.0.1:3001/exportHtml', {
+        //     method: 'POST',
+        //     body: {
+        //         previewHtml: previewHtml
+        //     }
+        // }).
+        // then((res) => {
+        //     console.log(res)
+        // })
+        console.log('导出')
+    }
+
     render() {
+        previewHtml = marked(
+            this.props.editor.editorValue,
+            {
+                highlight: function (code) {
+                    return hljs.highlightAuto(code).value;
+                }
+            }
+        );
+
         const {
             dialog,
             editor,
-            preview,
+            // preview,
             toolbar,
             changeEditorFullscreen,
             changePreviewFullscreen,
             changeTheme,
-            getEditorValue
+            getEditorValue,
+            changePreviewHtml,
         } = this.props;
 
         return (
@@ -49,10 +79,12 @@ class App extends React.Component {
                 />
                 <Preview
                     editorValue={editor.editorValue}
+                    previewHtml={previewHtml}
                     isFullScreen={toolbar.isPreviewFullScreen}
                 />
                 <ToolBar
                     selectThemes={(theme) => { changeTheme(theme) }}
+                    handleExport={this.exportHtml.bind(this)}
                     isPreviewFullScreen={toolbar.isPreviewFullScreen}
                     handlePreviewFullScreen={() => { changePreviewFullscreen() }}
                     isEditorFullScreen={toolbar.isEditorFullScreen}
