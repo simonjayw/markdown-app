@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import marked from 'marked';
 import hljs from 'highlight.js';
@@ -17,7 +17,7 @@ import '../styles/App.css';
 
 let previewHtml = '';
 
-class App extends React.Component {
+class App extends Component {
     componentDidMount() {
         document.addEventListener('keydown', (e) => {
             if (e.ctrlKey && e.key === 's') {
@@ -33,7 +33,7 @@ class App extends React.Component {
         showDialogTip(true, '保存成功');
     }
 
-    exportHtml() {
+    exportHtml = () => {
         // const { editor } = this.props;
         // fetch('//127.0.0.1:3001/exportHtml', {
         //     method: 'POST',
@@ -66,7 +66,7 @@ class App extends React.Component {
             changePreviewFullscreen,
             changeTheme,
             getEditorValue,
-            changePreviewHtml,
+            // changePreviewHtml,
         } = this.props;
 
         return (
@@ -84,7 +84,7 @@ class App extends React.Component {
                 />
                 <ToolBar
                     selectThemes={(theme) => { changeTheme(theme) }}
-                    handleExport={this.exportHtml.bind(this)}
+                    handleExport={ this.exportHtml }
                     isPreviewFullScreen={toolbar.isPreviewFullScreen}
                     handlePreviewFullScreen={() => { changePreviewFullscreen() }}
                     isEditorFullScreen={toolbar.isEditorFullScreen}

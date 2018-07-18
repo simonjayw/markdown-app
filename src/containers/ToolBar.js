@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import '../styles/editor/EditorToolBar.css';
 import ToolThemeList from '../components/ToolThemeList';
 import * as toolIcons from '../components/ToolBarIcon';
 
-class ToolBar extends React.Component {
+class ToolBar extends Component {
     constructor(props) {
         super(props);
 

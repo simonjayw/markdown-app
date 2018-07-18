@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import EditorContent from '../components/EditorContent';
 import '../styles/editor/Editor.css';
 
-class Editor extends React.Component {
+class Editor extends Component {
     handleEditorFullScreen() {
         this.props.handleEditorFullScreen();
     }
@@ -17,7 +17,7 @@ class Editor extends React.Component {
         this.props.changeTheme(theme);
     }
 
-    changeEditorValue(editorValue) {
+    changeEditorValue = (editorValue) => {
         this.props.getEditorValue(editorValue);
     }
 
@@ -35,7 +35,7 @@ class Editor extends React.Component {
                     theme={theme}
                     isFullScreen={isFullScreen}
                     editorValue={editorValue}
-                    changeEditorValue={this.changeEditorValue.bind(this)}
+                    changeEditorValue={this.changeEditorValue}
                 />
             </div>
         );
